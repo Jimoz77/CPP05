@@ -4,6 +4,9 @@
 #include <string>
 #include <iostream>
 #include <exception>
+#include "Form.hpp"
+
+class Form;
 
 class Bureaucrat
 {
@@ -12,11 +15,13 @@ private:
     int                 _grade;
 public:
                         Bureaucrat();// def
-                        Bureaucrat(std::string name, int grade);
+                        Bureaucrat(const std::string name, int grade);
                         Bureaucrat(const Bureaucrat& other);// copy
 
     const std::string&   getName() const;
     int                 getGrade() const;
+    void                signForm(Form& Form);
+
     void                IncrGrade();
     void                DecrGrade();
 

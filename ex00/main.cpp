@@ -1,12 +1,5 @@
 #include "Bureaucrat.hpp"
 
-
-
-//tester fonction membre 
-//ajouter le try and catch pour les erreur imprevues 
-//puis test
-//pas oublier valgrind
-
 int main()
 {
     try
@@ -20,7 +13,7 @@ int main()
         Bureaucrat c = Bureaucrat();
         std::cout << "salut " << b;
         c.DecrGrade();
-        std::cout << "bye " << b;
+        std::cout << "bye " << b; // ne serai pas affiché psq DecrGrade occasionne une erreur qui est catch
         
         a = b;
     }

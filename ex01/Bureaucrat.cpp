@@ -6,7 +6,7 @@ Bureaucrat::Bureaucrat() : _name("random employee"), _grade(150)
     std::cout << _name << " has been created with the default grade: " << _grade << "\n";
 }
 
-Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade)
+Bureaucrat::Bureaucrat(const std::string name, int grade) : _name(name), _grade(grade)
 {
     if(_grade > 150)
         throw Bureaucrat::GradeTooLowException();
@@ -25,6 +25,21 @@ const std::string& Bureaucrat::getName() const
 {
     return(_name);
 }
+
+void Bureaucrat::signForm(Form& Form)
+{
+    try
+    {
+        Form.beSigned(*this);
+        std::cout << _name << " signed " << Form.getName() << "\n";
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << _name << " couldn't sign " << Form.getName() << " because " << e.what() << "\n";
+    }
+
+}
+
 
 int Bureaucrat::getGrade() const
 {
