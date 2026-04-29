@@ -8,7 +8,7 @@
 class Bureaucrat
 {
 private:
-    const std::string   _name; // a voir si possible d initialiser depuis le constructeur sinon a changer
+    const std::string   _name;
     int                 _grade;
 public:
                         Bureaucrat();// def

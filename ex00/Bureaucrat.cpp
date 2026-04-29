@@ -46,7 +46,7 @@ void Bureaucrat::DecrGrade()
         _grade += 1;
 }
 
-Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other)// a regarder comment initalisser la variable const _name
+Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other)
 {
     if(this != &other)
     {
@@ -57,7 +57,7 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other)// a regarder comment 
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& b)
 {
-    os << b.getName() << ", bureaucrat grade " << b.getGrade() << "\n";
+    os << b.getName() << ", bureaucrat grade " << b.getGrade() << ".\n";
 
     return (os);
 }
