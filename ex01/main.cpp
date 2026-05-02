@@ -4,7 +4,7 @@
 int main()
 {
     // --- TEST 1 : Création de Formulaires ---
-    std::cout << "\n=== TEST 1: Form Creation ===" << std::endl;
+    std::cout << "\nTEST 1: Form Creation\n" << std::endl;
     try {
         Form f1("Tax Return", 50, 100);
         std::cout << f1 << std::endl; // Test operator<<
@@ -17,7 +17,7 @@ int main()
     }
 
     // --- TEST 2 : Signature Réussie ---
-    std::cout << "\n=== TEST 2: Successful Signing ===" << std::endl;
+    std::cout << "\nTEST 2: Successful Signing\n" << std::endl;
     try {
         Bureaucrat boss("Boss", 5);
         Form contract("Contract", 10, 50); // Grade 10 requis pour signer
@@ -34,7 +34,7 @@ int main()
     }
 
     // --- TEST 3 : Echec de Signature ---
-    std::cout << "\n=== TEST 3: Failed Signing ===" << std::endl;
+    std::cout << "\nTEST 3: Failed Signing\n" << std::endl;
     try {
         Bureaucrat intern("Intern", 150);
         Form topSecret("Top Secret", 1, 1);

@@ -17,11 +17,11 @@ private:
 
 public:
     Form();
-    Form(const std::string& name, const int signGrade, const int execGrade); //pas sur ???
+    Form(const std::string& name, const int signGrade, const int execGrade);
     Form(const Form& other);
 
 
-    void beSigned(Bureaucrat& Bureaucrat);
+    void beSigned(Bureaucrat& bureaucrat);
     
     const std::string&  getName() const;
     bool                getSigned() const;
@@ -33,7 +33,7 @@ public:
         public:
                     virtual const char* what() const throw()
                     {
-                        return ("Error : grade is too high. Grade should be lower than 1\n");
+                        return ("Error : grade is too high. Grade should be lower than 1.\n");
                     }
 
     };
@@ -43,7 +43,7 @@ public:
         public :
                     virtual const char* what() const throw()
                     {
-                        return ("Error : grade is too low. Grade should be higher than 150\n");
+                        return ("Error : grade is too low. Grade should be higher than 150.\n");
                     }
     };
 

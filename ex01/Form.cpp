@@ -1,17 +1,22 @@
 #include "Form.hpp"
 
+Form::Form() : _name("default"), _signed(false), _signGrade(150), _execGrade(150)
+{
+	std::cout << "default form has been created" << std::endl;
+}
+
 Form::Form(const std::string& name, const int signGrade, const int execGrade) : _name(name), _signed(false), _signGrade(signGrade), _execGrade(execGrade)
 {
     if (signGrade < 1 || execGrade < 1)
         throw Form::GradeTooHighException();
     if (signGrade > 150 || execGrade > 150)
         throw Form::GradeTooLowException();
-    std::cout << _name << ", Form has been created\n";
+    std::cout << _name << ", Form has been created" << std::endl;
 }
 
 Form::Form(const Form& other) : _name(other._name), _signed(other._signed), _signGrade(other._signGrade), _execGrade(other._execGrade)
 {
-    std::cout << _name << ", Form has been created by copy constructor\n";
+    std::cout << _name << ", Form has been created by copy constructor" << std::endl;
 }
 
 const std::string& Form::getName() const
@@ -34,9 +39,9 @@ int Form::getExecGrade() const
     return (_execGrade);
 }
 
-void Form::beSigned(Bureaucrat& Bureaucrat)
+void Form::beSigned(Bureaucrat& bureaucrat)
 {
-    if(Bureaucrat.getGrade() <= _signGrade)
+    if(bureaucrat.getGrade() <= _signGrade)
     {
         _signed = true;
     }

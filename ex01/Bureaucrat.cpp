@@ -26,16 +26,16 @@ const std::string& Bureaucrat::getName() const
     return(_name);
 }
 
-void Bureaucrat::signForm(Form& Form)
+void Bureaucrat::signForm(Form& form)
 {
     try
     {
-        Form.beSigned(*this);
-        std::cout << _name << " signed " << Form.getName() << "\n";
+        form.beSigned(*this);
+        std::cout << _name << " signed " << form.getName() << "\n";
     }
     catch(const std::exception& e)
     {
-        std::cerr << _name << " couldn't sign " << Form.getName() << " because " << e.what() << "\n";
+        std::cerr << _name << " couldn't sign " << form.getName() << " because " << e.what() << "\n";
     }
 
 }
@@ -61,7 +61,7 @@ void Bureaucrat::DecrGrade()
         _grade += 1;
 }
 
-Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other)// a regarder comment initalisser la variable const _name
+Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other)
 {
     if(this != &other)
     {
@@ -72,7 +72,7 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other)// a regarder comment 
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& b)
 {
-    os << b.getName() << ", bureaucrat grade " << b.getGrade() << "\n";
+    os << b.getName() << ", bureaucrat grade " << b.getGrade() << ".\n";
 
     return (os);
 }
