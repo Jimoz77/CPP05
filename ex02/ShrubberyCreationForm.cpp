@@ -2,6 +2,7 @@
 #include "AForm.hpp"
 #include <fstream>
 #include <string>
+#include <iostream>
 
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string& target) : AForm("ShrubberyCreationForm", 145, 137), _target(target) // _signGrade = 145 _execGrade = 137
 {

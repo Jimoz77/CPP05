@@ -1,4 +1,5 @@
 #include "PresidentialPardonForm.hpp"
+#include <iostream>
 #include "AForm.hpp"
 
 PresidentialPardonForm::PresidentialPardonForm(const std::string &target): AForm("PresidentialPardonForm", 25, 5), _target(target) // _signGrade = 25 _execGrade = 5
