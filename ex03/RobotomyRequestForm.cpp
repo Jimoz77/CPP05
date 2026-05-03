@@ -1,4 +1,7 @@
 #include "RobotomyRequestForm.hpp"
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
 #include "AForm.hpp"
 
 RobotomyRequestForm::RobotomyRequestForm(const std::string& target) : AForm("RobotomyRequestForm", 72, 45 ), _target(target)
@@ -12,10 +15,15 @@ RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& other) : AFo
 
 bool	fifty_fifty_bool()
 {
-	static int seed = 7821;
-
-	seed = (seed * 3221 + 7942);
-	return(seed % 2 == 0);
+	static bool seeded = false;
+	if(!seeded)
+	{
+		std::srand(std::time(NULL));
+		seeded = true;
+	}
+	if(std::rand() % 2 == 0)
+		return (true);
+	return(false);
 }
 
 void RobotomyRequestForm::executeAction(Bureaucrat const &executor) const
